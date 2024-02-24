@@ -137,30 +137,30 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 	Following the instruction [https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup](https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup)
 	
 	* Create a filter and fill the following
-	```
-	# /etc/fail2ban/filter.d/vaultwarden.local
-	[INCLUDES]
-	before = common.conf
-	
-	[Definition]
-	failregex = ^.*Username or password is incorrect\. Try again\. IP: <ADDR>\. Username:.*$
-	ignoreregex =
-	```
+		```
+		# /etc/fail2ban/filter.d/vaultwarden.local
+		[INCLUDES]
+		before = common.conf
+		
+		[Definition]
+		failregex = ^.*Username or password is incorrect\. Try again\. IP: <ADDR>\. Username:.*$
+		ignoreregex =
+		```
 
 	* Create a jail and fill the following 
-	```
-	# /etc/fail2ban/jail.d/vaultwarden.local
-	[vaultwarden]
-	enabled = true
-	port = 80,443,8080
-	filter = vaultwarden
-	logpath = /usr/local/bin/vaulwarden/vwarden.log
-	action = cloudflare
-		iptables-allports
-	maxretry = 3
-	findtime = 600
-	bantime = 600
-	```
+		```
+		# /etc/fail2ban/jail.d/vaultwarden.local
+		[vaultwarden]
+		enabled = true
+		port = 80,443,8080
+		filter = vaultwarden
+		logpath = /usr/local/bin/vaulwarden/vwarden.log
+		action = cloudflare
+			iptables-allports
+		maxretry = 3
+		findtime = 600
+		bantime = 600
+		```
 	* Reload fail2ban with `sudo systemctl reload fail2ban` for changes to take effect.
 	
 	* After 3 failed logins, the visitor's IP would be blocked with image below.
