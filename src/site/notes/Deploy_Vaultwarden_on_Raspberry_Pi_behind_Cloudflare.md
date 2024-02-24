@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/deploy-vaultwarden-on-raspberry-pi-behind-cloudflare/","tags":["gardenEntry"]}
+{"dg-publish":true,"permalink":"/deploy-vaultwarden-on-raspberry-pi-behind-cloudflare/"}
 ---
 
 ---
@@ -171,7 +171,7 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 	After 3 failed logins, the visitor's IP would be blocked with image below.
 
 
-## Issues Met in the Process
+## 7. Issues Met in the Process
 1. Fail2Ban could not find the logpath.
 	Execute command `sudo fail2ban status vaultwarden`. If the File List is empty, like below, check the /etc/fail2ban/jail.local or similar file, inside which defines `backend = systemd`. Delete or command this line and reload fail2ban, then retry the command. 
 
@@ -196,7 +196,7 @@ Status for the jail: vaultwarden
 
 
 
-## Reference
+## 8. Reference
 
 [Self Hosting Bitwarden on the Raspberry Pi](https://pimylifeup.com/raspberry-pi-bitwarden)
 https://github.com/dani-garcia/vaultwarden/wiki
