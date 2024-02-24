@@ -132,13 +132,11 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
         
 3. Install Fail2Ban
 	
-	The common tool to avoid brute attack is Fail2Ban, which could ban the visitors’ IPs if failed several times on logging in.
+	The common tool to avoid brute attack is Fail2Ban, which could ban the visitors’ IPs if failed several times on logging in. Install Fail2Ban with the command `sudo apt install fail2ban`.
 	
-	`sudo apt install fail2ban`
+	Following the instruction [https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup](https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup)
 	
-	 Following the instruction [https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup](https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup)
-	
-	Create a filter and fill the following
+	* Create a filter and fill the following
 	```
 	# /etc/fail2ban/filter.d/vaultwarden.local
 	[INCLUDES]
@@ -149,7 +147,7 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 	ignoreregex =
 	```
 
-	Create a jail and fill the following 
+	* Create a jail and fill the following 
 	```
 	# /etc/fail2ban/jail.d/vaultwarden.local
 	[vaultwarden]
@@ -163,12 +161,9 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 	findtime = 600
 	bantime = 600
 	```
-	Reload fail2ban for changes to take effect
-	```
-	sudo systemctl reload fail2ban
-	```
-	After 3 failed logins, the visitor's IP would be blocked with image below.
-
+	* Reload fail2ban with `sudo systemctl reload fail2ban` for changes to take effect.
+	
+	* After 3 failed logins, the visitor's IP would be blocked with image below.
 
 ## 7. Issues Met in the Process
 1. Fail2Ban could not find the logpath.
