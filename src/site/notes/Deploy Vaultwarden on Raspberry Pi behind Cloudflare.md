@@ -137,6 +137,7 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 	Following the instruction [https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup](https://github.com/dani-garcia/vaultwarden/wiki/Fail2Ban-Setup)
 	
 	* Create a filter and fill the following
+	
 		```
 		# /etc/fail2ban/filter.d/vaultwarden.local
 		[INCLUDES]
@@ -148,6 +149,7 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 		```
 
 	* Create a jail and fill the following 
+	
 		```
 		# /etc/fail2ban/jail.d/vaultwarden.local
 		[vaultwarden]
@@ -161,11 +163,13 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 		findtime = 600
 		bantime = 600
 		```
+	
 	* Reload fail2ban with `sudo systemctl reload fail2ban` for changes to take effect.
 	
 	* After 3 failed logins, the visitor's IP would be blocked with image below.
 
 ## 7. Issues Met in the Process
+
 1. Fail2Ban could not find the logpath.
 	Execute command `sudo fail2ban status vaultwarden`. If the File List is empty, like below, check the /etc/fail2ban/jail.local or similar file, inside which defines `backend = systemd`. Delete or command this line and reload fail2ban, then retry the command. 
 
