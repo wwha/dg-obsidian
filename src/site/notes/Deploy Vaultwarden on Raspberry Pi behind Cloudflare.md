@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/deploy-vaultwarden-on-raspberry-pi-behind-cloudflare/","created":"2024-02-19T20:53:33.193+08:00","updated":"2024-02-25T01:59:52.393+08:00"}
+{"dg-publish":true,"permalink":"/deploy-vaultwarden-on-raspberry-pi-behind-cloudflare/","created":"2024-02-19T20:53:33.193+08:00","updated":"2024-03-03T18:27:13.361+08:00"}
 ---
 
 
@@ -8,7 +8,7 @@
 
 Above is the introduction of Vaultwarden from [https://github.com/dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden). In other words, after deploying Vaultwarden server we can use the clients of Bitwarden, which supports all kinds of platform, to manage our passwords. This article would demonstrate deploying Vaultwarden on Raspberry Pi behind Cloudflare with additional security measures like Fail2Ban. 
 
-![nginx reverse proxy.drawio](https://community.bitwarden.com/uploads/default/original/3X/e/4/e45d02edbc619cbc88105c0948be9600730d92f3.jpeg)
+![asserts/e72ecf55dc456418301e4e7d7a02304e_MD5.jpg](/img/user/asserts/e72ecf55dc456418301e4e7d7a02304e_MD5.jpg)
 
 ## 1. Pre-requisite
     
@@ -67,11 +67,11 @@ Move the “vaultwarden.conf” to `/etc/nginx/sites-enabled/`, and reload Nginx
     
 1. Login Cloudflare account and select Zero Trust.
 	
-	![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbdd3393a-5220-4d04-a10f-29054e5fc8f4.heic)
+	![asserts/3b090e21d6e9ade824825cfb91f8bbd6_MD5.jpg](/img/user/asserts/3b090e21d6e9ade824825cfb91f8bbd6_MD5.jpg)
 	
 2. Create a tunnel using the recommended “Cloudflared”. Follow the instruction to install “Cloudflared” on Raspberry Pi. In Public Hostname, use the following configuration. 
 	
-	![](https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e2c89d4-397f-49c3-a58b-9759d5115bf7.heic)
+	![asserts/e24669c20af849a6902c8b3da5873faf_MD5.jpg](/img/user/asserts/e24669c20af849a6902c8b3da5873faf_MD5.jpg)
 	
 	The Service Type must be HTTP, which means the communication between “Cloudflared” and the reverse proxy, Nginx, shall not be encrypted as HTTPS.
 	
@@ -148,6 +148,16 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 		ignoreregex =
 		```
 
+	* Add a Cloudflare action for Cloudflare users
+		```
+		# /etc/fail2ban/action.d/cloudflare.local
+		[Init]
+		cftoken = <Global API KEY>
+		cfuser = <Email>
+		cftarget = ip
+		```
+	
+		The Global API KEY could be found https://dash.cloudflare.com/profile/api-tokens.
 	* Create a jail and fill the following 
 	
 		```
@@ -163,24 +173,25 @@ The Vaultwarden uses Bitwarden clients. So install Bitwarden for phone and brows
 		findtime = 600
 		bantime = 600
 		```
-	
 	* Reload fail2ban with `sudo systemctl reload fail2ban` for changes to take effect.
 	
-	* After 3 failed logins, the visitor's IP would be blocked with image below.
+	* After 3 failed logins, the visitor's IP would be blocked by Cloudflare and the website would show like below.
+	
+		![Screen Shot 2024-03-03 at 9.24.31 AM.png](/img/user/asserts/Screen%20Shot%202024-03-03%20at%209.24.31%20AM.png)
+		![Screen Shot 2024-03-03 at 9.25.28 AM.png](/img/user/asserts/Screen%20Shot%202024-03-03%20at%209.25.28%20AM.png)
 
 ## 7. Issues Met in the Process
 
 1. Fail2Ban could not find the logpath.
 	Execute command `sudo fail2ban status vaultwarden`. If the File List is empty, like below, check the /etc/fail2ban/jail.local or similar file, inside which defines `backend = systemd`. Delete or command this line and reload fail2ban, then retry the command. 
-
+	
 ```sh
-~ sudo fail2ban-client status vaultwarden
 Status for the jail: vaultwarden
 |- Filter
 |  |- Currently failed:	0
 |  |- Total failed:	6
 |  `- File list:	
-`- Actions
+`\- Actions
    |- Currently banned:	0
    |- Total banned:	1
    `- Banned IP list:
@@ -192,6 +203,19 @@ Status for the jail: vaultwarden
 3. The date or time does no match local date or time.
 	The time zone setting is not correct in Vaultwarden server. Reinstall the container with addition parameter `TZ=Asia/Hong_Kong`.
 
+4. The visitor's IP is banned by Fail2Ban, but is not blocked. The log of Fail2Ban is like below.
+	```
+	
+	2024-03-03 09:58:11,815 fail2ban.utils          [6900]: ERROR   7fb80ddf70 -- returned 6
+	2024-03-03 09:58:21,897 fail2ban.utils          [6900]: ERROR   7fb80ddf70 -- exec: curl -s -o /dev/null -X POST -H 'X-Auth-Email: email' -H 'X-Auth-Key: token' -H 'Content-Type: application/json' \
+	-d '{"mode":"block","configuration":{"target":"ip","value":"xxx.xxx.xxx.xxx"},"notes":"Fail2Ban vaultwarden"}' \
+	https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules
+	2024-03-03 09:58:21,898 fail2ban.utils          [6900]: ERROR   7fb80ddf70 -- returned 6
+	2024-03-03 09:58:21,900 fail2ban.actions        [6900]: ERROR   Failed to execute ban jail 'vaultwarden' action 'cloudflare' info 'ActionInfo({'ip': 'xxx.xxx.xxx.xx', 'family': 'inet4', 'fid': <function Actions.ActionInfo.<lambda> at 0x7fbbc32c00>, 'raw-ticket': <function Actions.ActionInfo.<lambda> at 0x7fbbc33380>})': Error banning 192.53.117.246
+	```
+
+	It seems the `curl` command fails execution. Manually running the `curl` command would add the IP to the blocklist of Cloudflare. Currently, it is an open issue for Cloudflare users from github and the solution is in working progress. https://github.com/fail2ban/fail2ban/issues/2318. 
+
 
 
 ## 8. Reference
@@ -199,3 +223,4 @@ Status for the jail: vaultwarden
 [Self Hosting Bitwarden on the Raspberry Pi](https://pimylifeup.com/raspberry-pi-bitwarden)
 https://github.com/dani-garcia/vaultwarden/wiki
 [Guide to routing to your Bitwarden Server via nginx reverse proxy](https://community.bitwarden.com/t/guide-to-setting-up-bitwarden-behind-an-nginx-reverse-proxy-configuration/53196)
+[Using Fail2Ban with Cloudflare](https://niksec.com/using-fail2ban-with-cloudflare/)
