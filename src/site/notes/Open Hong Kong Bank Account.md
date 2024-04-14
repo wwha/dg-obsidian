@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/open-hong-kong-bank-account/","title":"办理香港银行账户","created":"2024-03-10T13:00:04.165+08:00","updated":"2024-03-10T16:50:20.060+08:00"}
+{"dg-publish":true,"permalink":"/open-hong-kong-bank-account/","title":"办理香港银行账户","created":"2024-03-10T13:00:04.165+08:00","updated":"2024-03-13T23:02:07.724+08:00"}
 ---
 
 
@@ -34,3 +34,6 @@
 2. 如果香港银行账户长时间没有交易记录，会被银行设置为休眠账户，无法支付或转出，需要打电话给银行客户经理，申请激活成活跃账户。通过在汇丰银行设置定期转账任务，每月向中国银行转账1港元，维持这2个账户的活跃状态。（中国银行里没有找到定期转账的选项。）
 3. 如果家里部分钱放银行存定期，不如购买香港的储蓄险，比如友邦的[盈御多元货币计划3](https://www.aia.com.hk/zh-cn/products/save/global-power-3)，可以选择美元作为保单货币，灵活拆分，保证红利加上非保证红利在第20年时IRR可以达到5.51%，之后，最高可以达到6.54%。另外还有一些限时的保费优惠。
 	![asserts/2dc9e9e0f8e3888c213cb8ba14fa9186_MD5.jpg](/img/user/asserts/2dc9e9e0f8e3888c213cb8ba14fa9186_MD5.jpg)
+
+## 参考链接
+- [中银香港银行卡开户攻略](https://acuario.xyz/others/bochk-debit-card/)
