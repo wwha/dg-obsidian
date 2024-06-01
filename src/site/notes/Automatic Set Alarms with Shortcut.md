@@ -1,6 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/automatic-set-alarms-with-shortcut/","created":"2024-03-03T22:03:40.314+08:00","updated":"2024-03-03T23:11:55.787+08:00"}
+{"dg-publish":true,"permalink":"/automatic-set-alarms-with-shortcut/","created":"2024-03-03T22:03:40.314+08:00","updated":"2024-04-15T07:14:20.493+08:00"}
 ---
+
+#shortcuts 
 
 The Alarms are necessary for workdays. When it comes to holidays, the workdays are not always weekdays. Here, the Shortcut on iOS could help to set the alarms automatically, regardless of the any day of the week.
 
