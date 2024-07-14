@@ -9,6 +9,7 @@ Atom/RSS Feed
 
 | File                                                                                                              | Published         | Last Modified  |
 | ----------------------------------------------------------------------------------------------------------------- | ----------------- | -------------- |
+| [[Journal 2024-07-14\|Journal 2024-07-14]]                                                                     | July 14, 2024     | July 14, 2024  |
 | [[Simple Budget with Shortcuts and Numbers\|Simple Budget with Shortcuts and Numbers]]                         | April 14, 2024    | April 14, 2024 |
 | [[Open Hong Kong Bank Account\|Open Hong Kong Bank Account]]                                                   | March 10, 2024    | June 01, 2024  |
 | [[Automatic Set Alarms with Shortcut\|Automatic Set Alarms with Shortcut]]                                     | March 03, 2024    | April 15, 2024 |
