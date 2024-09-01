@@ -7,12 +7,15 @@
 Atom/RSS Feed
 [https://blog.joy-lake.com/feed.xml](https://blog.joy-lake.com/feed.xml)
 
-| File                                                                                                              | Published         | Last Modified  |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------- | -------------- |
-| [[Journal 2024-07-14\|Journal 2024-07-14]]                                                                     | July 14, 2024     | July 14, 2024  |
-| [[Simple Budget with Shortcuts and Numbers\|Simple Budget with Shortcuts and Numbers]]                         | April 14, 2024    | April 14, 2024 |
-| [[Open Hong Kong Bank Account\|Open Hong Kong Bank Account]]                                                   | March 10, 2024    | June 01, 2024  |
-| [[Automatic Set Alarms with Shortcut\|Automatic Set Alarms with Shortcut]]                                     | March 03, 2024    | April 15, 2024 |
-| [[Deploy Vaultwarden on Raspberry Pi behind Cloudflare\|Deploy Vaultwarden on Raspberry Pi behind Cloudflare]] | February 19, 2024 | March 17, 2024 |
+| File                                                                                                              | Published         | Last Modified      |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------ |
+| [[使用云盘看电影\|使用云盘看电影]]                                                                                           | July 21, 2024     | September 01, 2024 |
+| [[汇款到香港的货币比较\|汇款到香港的货币比较]]                                                                                     | July 16, 2024     | July 17, 2024      |
+| [[Journal 2024-07-14\|Journal 2024-07-14]]                                                                     | July 14, 2024     | July 14, 2024      |
+| [[Simple Budget with Shortcuts and Numbers\|Simple Budget with Shortcuts and Numbers]]                         | April 14, 2024    | April 14, 2024     |
+| [[Open Hong Kong Bank Account\|Open Hong Kong Bank Account]]                                                   | March 10, 2024    | June 01, 2024      |
+| [[Automatic Set Alarms with Shortcut\|Automatic Set Alarms with Shortcut]]                                     | March 03, 2024    | April 15, 2024     |
+| [[Deploy Vaultwarden on Raspberry Pi behind Cloudflare\|Deploy Vaultwarden on Raspberry Pi behind Cloudflare]] | February 19, 2024 | March 17, 2024     |
+| [[办理美国旅游签证\|办理美国旅游签证]]                                                                                         | January 21, 2024  | September 01, 2024 |
 
 { .block-language-dataview}
