@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/apply-us-tourist-visa/","title":"办理美国旅游签证","created":"2024-01-21T16:25:18.468+08:00","updated":"2024-09-01T20:00:35.185+08:00"}
+{"dg-publish":true,"permalink":"/apply-us-tourist-visa/","title":"办理美国旅游签证","created":"2024-01-21T16:25:18.468+08:00","updated":"2024-09-03T22:10:56.013+08:00"}
 ---
 
 
@@ -14,7 +14,7 @@
 ## 2. 网上预约
 - 登录[https://www.ustraveldocs.com/cn/zh/nonimmigrant-visa](https://www.ustraveldocs.com/cn/zh/nonimmigrant-visa)。如果没有账号，可以注册一个。填写DS-160的信息确认号码，填写接收护照的方式，然后通过中信银行缴费，预约面谈的时间。打印预约面谈确认单。
 - 可以通过网站[https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/wait-times.html/](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/wait-times.html/)查询领馆预约面谈需要等待的时间。B1/B2签证需要等待的时间都是最长的。当时最早可预约的时间是半年左右。
-- 除了4个大使馆所在城市各有一个中信银行的网点领取不收费用，其余的中信银行网点领取都收费了。选家附近的中信银行网点领取方便，即使收费，也比EMS邮寄费用低。
+- 除了4个大使馆所在城市各有一个中信银行的网点领取不收费用，其余的中信银行网点领取都收费了。
 ## 3. 准备面谈资料
 - 必备材料
 	- 护照
@@ -57,8 +57,8 @@
 ## 5. 领取护照
 - 通过[https://ceac.state.gov/CEACStatTracker/Status](https://ceac.state.gov/CEACStatTracker/Status.aspx?TSPD_101_R0=0883343043ab2000cce3d1369eb766f28c2fb0952b8dbba0f10b24e5324b218c64c960071e6516ab085dfb85b314300057c748e58ffd0f8c7a4bd0afbaac2ac58a80b3e82e65717241a504e86ab24423b31b01de15017d1caefff716866ff7ae)可以查看签证“Approve”或“Issued”的状态。
 - 通过中信银行手机App或[https://www.ustraveldocs.com/cn/zh/nonimmigrant-visa](https://www.ustraveldocs.com/cn/zh/nonimmigrant-visa)查询护照派送状态。
-- 面谈3天后，护照被送达选定的中信银行网点，银行工作人员电话通知我们领取护照。领取时间被限制在周中，得特意地请半天假领取。仅这一点，就不如EMS邮寄或选择离公司近一点的网点。
+- 面谈3天后，护照被送达选定的中信银行网点，银行工作人员电话通知我们周中到柜台领取护照。一天后才收到提醒邮寄。特意地请半天假领取，在柜台花了20分钟左右办理手续，才领到护照。不如选择EMS邮寄，也贵不了多少。
 ## 6. 后续维护
-- 每2年登录EVUS [www.evus.gov](https://www.evus.gov/#/)，核对信息。
+- 每2年登录EVUS [www.evus.gov](https://www.evus.gov/#/)，填写信息。
 - 签证过期后，如获得过除B类签证之外的非移民签证，在签证过期4年内，续签相同类型签证时，可以选择免面谈，即不用去大使馆面签，可以邮寄递签。[Important Update on Waivers of the Interview Requirement for Certain Nonimmigrant Visa Applicants](https://travel.state.gov/content/travel/en/News/visas-news/important-update-on-waivers-of-the-interview-requirement-for-certaing-nonimmigrant-visa-applicants.html).
 - 换新护照后，原来的美国10年签证还是有效。补发护照不行。[https://www.meiguo-qianzheng.com/qitaqianzhengwenti/1229.html](https://www.meiguo-qianzheng.com/qitaqianzhengwenti/1229.html)

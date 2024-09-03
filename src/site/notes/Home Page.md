@@ -9,13 +9,13 @@ Atom/RSS Feed
 
 | File                                                                                                              | Published          | Last Modified      |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------ |
-| [[One-Day Trip to Disney HK\|One-Day Trip to Disney HK]]                                                       | September 01, 2024 | September 01, 2024 |
+| [[One-Day Trip to Disney HK\|One-Day Trip to Disney HK]]                                                       | September 01, 2024 | September 03, 2024 |
 | [[Transferring Money to Hong Kong\|Transferring Money to Hong Kong]]                                           | July 16, 2024      | September 01, 2024 |
 | [[Journal 2024-07-14\|Journal 2024-07-14]]                                                                     | July 14, 2024      | July 14, 2024      |
 | [[Simple Budget with Shortcuts and Numbers\|Simple Budget with Shortcuts and Numbers]]                         | April 14, 2024     | April 14, 2024     |
 | [[Open Hong Kong Bank Account\|Open Hong Kong Bank Account]]                                                   | March 10, 2024     | June 01, 2024      |
 | [[Automatic Set Alarms with Shortcut\|Automatic Set Alarms with Shortcut]]                                     | March 03, 2024     | April 15, 2024     |
 | [[Deploy Vaultwarden on Raspberry Pi behind Cloudflare\|Deploy Vaultwarden on Raspberry Pi behind Cloudflare]] | February 19, 2024  | March 17, 2024     |
-| [[Apply US Tourist VISA\|Apply US Tourist VISA]]                                                               | January 21, 2024   | September 01, 2024 |
+| [[Apply US Tourist VISA\|Apply US Tourist VISA]]                                                               | January 21, 2024   | September 03, 2024 |
 
 { .block-language-dataview}
