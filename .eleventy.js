@@ -7,6 +7,7 @@ const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const sanitizeHtml = require("sanitize-html");
 
 const { headerToId, namedHeadingsFilter } = require("./src/helpers/utils");
 const {
@@ -365,8 +366,9 @@ module.exports = function (eleventyConfig) {
           function (metaInfoMatch, callout, metaData, collapse, title) {
             isCollapsable = Boolean(collapse);
             isCollapsed = collapse === "-";
-            const titleText = title.replace(/(<\/{0,1}\w+>)/, "")
-              ? title
+            const sanitizedTitle = sanitizeHtml(title, { allowedTags: [], allowedAttributes: {} }).trim();
+            const titleText = sanitizedTitle
+              ? sanitizedTitle
               : `${callout.charAt(0).toUpperCase()}${callout
                 .substring(1)
                 .toLowerCase()}`;
