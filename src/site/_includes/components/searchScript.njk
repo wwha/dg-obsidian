@@ -323,8 +323,12 @@
     }
 
     function truncate(str, size) {
-        //first, remove HTML
-        str = str.replaceAll(/<[^>]*>/g, '');
+        // first, robustly remove HTML tags by repeatedly replacing until stable
+        let prev;
+        do {
+            prev = str;
+            str = str.replaceAll(/<[^>]*>/g, '');
+        } while (str !== prev);
         if (str.length < size) 
             return str;
         return str.substring(0, size - 3) + '...';
